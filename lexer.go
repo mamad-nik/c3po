@@ -70,6 +70,10 @@ var DefTable []defEntity = []defEntity{
 		"protect",
 		levelOfProtection,
 	},
+	{
+		"ref",
+		levelOfProtection,
+	},
 }
 var class []string = []string{
 	"class",
@@ -87,6 +91,9 @@ var primitive []string = []string{
 	"void",
 	"int",
 	"boolean",
+}
+var refType []string = []string{
+	"this",
 }
 var relop []string = []string{
 	">",
