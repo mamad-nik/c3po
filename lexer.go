@@ -7,6 +7,10 @@ type defEntity struct {
 
 var DefTable []defEntity = []defEntity{
 	{
+		"class",
+		class,
+	},
+	{
 		"keyword",
 		keywords,
 	},
@@ -43,6 +47,10 @@ var DefTable []defEntity = []defEntity{
 		closepar,
 	},
 	{
+		"return",
+		returnstmt,
+	},
+	{
 		"curBrOp",
 		curBrOp,
 	},
@@ -50,9 +58,25 @@ var DefTable []defEntity = []defEntity{
 		"curBrCl",
 		curBrCl,
 	},
+	{
+		"BrOp",
+		BrOp,
+	},
+	{
+		"BrCl",
+		BrCl,
+	},
+	{
+		"protect",
+		levelOfProtection,
+	},
 }
-var kes [][]byte = [][]byte{
-	[]byte("mamad"),
+var class []string = []string{
+	"class",
+}
+var levelOfProtection []string = []string{
+	"public",
+	"private",
 }
 
 var keywords []string = []string{
@@ -84,6 +108,9 @@ var ariop []string = []string{
 	"*",
 	"/",
 }
+var returnstmt []string = []string{
+	"return",
+}
 var assign []string = []string{
 	"=",
 }
@@ -93,7 +120,6 @@ var eol []string = []string{
 var openpar []string = []string{
 	"(",
 }
-
 var closepar []string = []string{
 	")",
 }
@@ -102,4 +128,10 @@ var curBrOp []string = []string{
 }
 var curBrCl []string = []string{
 	"}",
+}
+var BrOp []string = []string{
+	"[",
+}
+var BrCl []string = []string{
+	"]",
 }
