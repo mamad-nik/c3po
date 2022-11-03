@@ -1,11 +1,11 @@
 package lexer
 
-type Entity struct {
+type defEntity struct {
 	Token string
 	Value []string
 }
 
-var Tab []Entity = []Entity{
+var DefTable []defEntity = []defEntity{
 	{
 		"keyword",
 		keywords,
