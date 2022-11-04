@@ -14,6 +14,6 @@ var ft []detectors.FinTable
 func main() {
 	token = filehandler.Read("/home/mamad/testArea/testComp")
 	fmt.Println(token)
-	detectors.Organize(token, ft)
+	ft = detectors.Organize(token, ft)
 	fmt.Println(ft)
 }

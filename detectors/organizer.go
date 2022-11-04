@@ -12,7 +12,7 @@ type FinTable struct {
 	Value string
 }
 
-func Organize(token []string, ft []FinTable) /*[]lexer.FinTable*/ {
+func Organize(token []string, ft []FinTable) []FinTable {
 	for j, x := range token {
 		state := false
 		for _, y := range lexer.DefTable {
@@ -36,5 +36,5 @@ func Organize(token []string, ft []FinTable) /*[]lexer.FinTable*/ {
 			}
 		}
 	}
-	/*	return ft*/
+	return ft
 }
