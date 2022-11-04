@@ -9,20 +9,11 @@ import (
 
 var token []string
 
-<<<<<<< HEAD
+var ft []detectors.FinTable
 
-=======
->>>>>>> parent of 18e7d54 (started implementing saving architecture)
 func main() {
-	var ft &[]lexer.FinTable
-
 	token = filehandler.Read("/home/mamad/testArea/testComp")
 	fmt.Println(token)
-<<<<<<< HEAD
 	detectors.Organize(token, ft)
-	fmt.Println(*ft)
-=======
-	detectors.Organize(token)
-
->>>>>>> parent of 18e7d54 (started implementing saving architecture)
+	fmt.Println(ft)
 }
