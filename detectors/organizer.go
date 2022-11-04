@@ -6,12 +6,15 @@ import (
 	"github.com/mamad-nik/lexer"
 )
 
-func Organize(token []string) {
+var ft []lexer.FinTable
+
+func Organize(token []string) []lexer.FinTable {
 	for j, x := range token {
 		state := false
 		for _, y := range lexer.DefTable {
 			for i := 0; i < len(y.Value); i++ {
 				if x == y.Value[i] {
+					ft = append(ft, lexer.FinTable{Index: j, Token: x, Value: y.Token})
 					fmt.Printf("\nnum:%d, lexeme: %s, val: %s \n", j, x, y.Token)
 					state = true
 				}
@@ -24,8 +27,10 @@ func Organize(token []string) {
 				fmt.Printf("compile failed because %s is %v\n", x, err)
 				break
 			} else {
+				ft = append(ft, lexer.FinTable{Index: j, Token: x, Value: temp})
 				fmt.Println(temp)
 			}
 		}
 	}
+	return ft
 }
