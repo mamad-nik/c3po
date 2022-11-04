@@ -108,6 +108,7 @@ var logop []string = []string{
 	"||",
 	"!",
 }
+
 var ariop []string = []string{
 	"+",
 	"-",
@@ -140,10 +141,4 @@ var BrOp []string = []string{
 }
 var BrCl []string = []string{
 	"]",
-}
-
-type FinTable struct {
-	Index int
-	Token string
-	Value string
 }

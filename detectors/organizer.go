@@ -6,15 +6,19 @@ import (
 	"github.com/mamad-nik/lexer"
 )
 
-var ft []lexer.FinTable
+type FinTable struct {
+	Index int
+	Token string
+	Value string
+}
 
-func Organize(token []string) []lexer.FinTable {
+func Organize(token []string, ft []FinTable) /*[]lexer.FinTable*/ {
 	for j, x := range token {
 		state := false
 		for _, y := range lexer.DefTable {
 			for i := 0; i < len(y.Value); i++ {
 				if x == y.Value[i] {
-					ft = append(ft, lexer.FinTable{Index: j, Token: x, Value: y.Token})
+					ft = append(ft, FinTable{Index: j, Token: x, Value: y.Token})
 					fmt.Printf("\nnum:%d, lexeme: %s, val: %s \n", j, x, y.Token)
 					state = true
 				}
@@ -27,10 +31,10 @@ func Organize(token []string) []lexer.FinTable {
 				fmt.Printf("compile failed because %s is %v\n", x, err)
 				break
 			} else {
-				ft = append(ft, lexer.FinTable{Index: j, Token: x, Value: temp})
+				ft = append(ft, FinTable{Index: j, Token: x, Value: temp})
 				fmt.Println(temp)
 			}
 		}
 	}
-	return ft
+	/*	return ft*/
 }
