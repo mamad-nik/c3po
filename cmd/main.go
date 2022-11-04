@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"os"
 
 	"github.com/mamad-nik/lexer/detectors"
 	filehandler "github.com/mamad-nik/lexer/fileHandler"
@@ -13,7 +13,12 @@ var ft []detectors.FinTable
 
 func main() {
 	token = filehandler.Read("/home/mamad/testArea/testComp")
-	fmt.Println(token)
 	ft = detectors.Organize(token, ft)
-	fmt.Println(ft)
+	f, err := os.Create("/home/mamad/testArea/final")
+	defer f.Close()
+	f.Chmod(0700)
+	if err != nil {
+		panic(err)
+	}
+	filehandler.Write(ft, f)
 }
