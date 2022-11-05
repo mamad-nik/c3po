@@ -71,8 +71,20 @@ var DefTable []defEntity = []defEntity{
 		levelOfProtection,
 	},
 	{
+		"sta",
+		sta,
+	},
+	{
 		"ref",
-		levelOfProtection,
+		refType,
+	},
+	{
+		"qousi",
+		qousi,
+	},
+	{
+		"comsi",
+		comsi,
 	},
 }
 var class []string = []string{
@@ -81,6 +93,9 @@ var class []string = []string{
 var levelOfProtection []string = []string{
 	"public",
 	"private",
+}
+var sta []string = []string{
+	"static",
 }
 
 var keywords []string = []string{
@@ -141,4 +156,10 @@ var BrOp []string = []string{
 }
 var BrCl []string = []string{
 	"]",
+}
+var qousi []string = []string{
+	"\"",
+}
+var comsi []string = []string{
+	",",
 }
