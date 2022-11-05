@@ -11,7 +11,7 @@ var ft []detectors.FinTable
 
 func main() {
 
-	token = filehandler.Read("/home/mamad/testArea/testComp")
+	token = filehandler.Read("test/testComp.txt")
 	ft = detectors.Organize(token, ft)
 
 	filehandler.Write("final.txt", ft)
