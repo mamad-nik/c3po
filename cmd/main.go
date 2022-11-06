@@ -10,8 +10,9 @@ var token []string
 var ft []detectors.FinTable
 
 func main() {
-
-	token = filehandler.Read("/home/mamad/go/src/lexer/test/testComp.txt")
+	var input string
+	fmt.scan(&input)
+	token = filehandler.Read(input)
 	ft = detectors.Organize(token, ft)
 	filehandler.Write("final.txt", ft)
 }
