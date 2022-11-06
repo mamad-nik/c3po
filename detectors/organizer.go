@@ -1,8 +1,6 @@
 package detectors
 
 import (
-	"fmt"
-
 	"github.com/mamad-nik/lexer"
 )
 
@@ -23,11 +21,10 @@ func Organize(token []string, ft []FinTable) []FinTable {
 				}
 			}
 		}
-		if state != true {
+		if !state {
 			temp, err := Detect(x)
 			if err != nil {
-				fmt.Printf("compile failed because %s is %v\n", x, err)
-				break
+				panic(err)
 			} else {
 				ft = append(ft, FinTable{Index: j, Token: x, Value: temp})
 			}

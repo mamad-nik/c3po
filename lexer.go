@@ -79,8 +79,8 @@ var DefTable []defEntity = []defEntity{
 		refType,
 	},
 	{
-		"qousi",
-		qousi,
+		"qouma",
+		qouma,
 	},
 	{
 		"comsi",
@@ -157,7 +157,7 @@ var BrOp []string = []string{
 var BrCl []string = []string{
 	"]",
 }
-var qousi []string = []string{
+var qouma []string = []string{
 	"\"",
 }
 var comsi []string = []string{
