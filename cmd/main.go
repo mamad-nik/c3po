@@ -13,5 +13,5 @@ func main() {
 
 	token = filehandler.Read("/home/mamad/go/src/lexer/test/testComp.txt")
 	ft = detectors.Organize(token, ft)
-	filehandler.Write("final.txt", ft)
+	filehandler.Write("final.csv", ft)
 }
