@@ -29,13 +29,16 @@ func isValidID(b []byte) (isvl bool) {
 	if isValidLet(b[0]) {
 		v1 = true
 	}
-	for i := 1; i < len(b); i++ {
-		if isValidLet(b[i]) || isValidDig(b[i]) {
-			v2 = true
+	if len(b) > 1 {
+		for i := 1; i < len(b); i++ {
+			if isValidLet(b[i]) || isValidDig(b[i]) {
+				v2 = true
+			}
 		}
+	} else {
+		v2 = true
 	}
 	return v1 && v2
-
 }
 
 func Detect(s string) (string, error) {

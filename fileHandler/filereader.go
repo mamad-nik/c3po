@@ -1,6 +1,7 @@
 package filehandler
 
 import (
+	"fmt"
 	"os"
 )
 
@@ -36,6 +37,6 @@ func Read(fileName string) []string {
 			temp = temp + string(data[i])
 		}
 	}
-
+	fmt.Println(token)
 	return token
 }

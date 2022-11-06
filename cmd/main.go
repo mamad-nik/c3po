@@ -11,8 +11,7 @@ var ft []detectors.FinTable
 
 func main() {
 
-	token = filehandler.Read("test/testComp.txt")
+	token = filehandler.Read("/home/mamad/go/src/lexer/test/testComp.txt")
 	ft = detectors.Organize(token, ft)
-
 	filehandler.Write("final.txt", ft)
 }
