@@ -1,6 +1,8 @@
 package detectors
 
 import (
+	"fmt"
+
 	"github.com/mamad-nik/lexer"
 )
 
@@ -13,17 +15,16 @@ type FinTable struct {
 func Organize(token []string, ft []FinTable) []FinTable {
 	for j, x := range token {
 		state := false
-		for _, y := range lexer.DefTable {
-			for i := 0; i < len(y.Value); i++ {
-				if x == y.Value[i] {
-					ft = append(ft, FinTable{Index: j, Token: x, Value: y.Token})
-					state = true
-				}
+		for key, val := range lexer.Keyval {
+			if key == x {
+				ft = append(ft, FinTable{Index: j, Token: x, Value: val})
 			}
 		}
+
 		if !state {
 			temp, err := Detect(x)
 			if err != nil {
+				fmt.Println(x)
 				panic(err)
 			} else {
 				ft = append(ft, FinTable{Index: j, Token: x, Value: temp})
