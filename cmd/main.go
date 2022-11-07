@@ -13,7 +13,7 @@ var token []string
 var ft []detectors.FinTable
 
 func main() {
-	var input string
+	var input stringS
 	fmt.Scan(&input)
 	token = filehandler.Read(input)
 	ft = detectors.Organize(token, ft)
