@@ -1,10 +1,5 @@
 package lexer
 
-type defEntity struct {
-	Token string
-	Value []string
-}
-
 var Keyval = map[string]string{
 	"class":   "class",
 	"if":      "keyword",
