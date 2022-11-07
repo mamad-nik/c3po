@@ -14,20 +14,13 @@ type FinTable struct {
 
 func Organize(token []string, ft []FinTable) []FinTable {
 	for j, x := range token {
-		state := false
-		for _, y := range lexer.DefTable {
-			for i := 0; i < len(y.Value); i++ {
-				if x == y.Value[i] {
-					ft = append(ft, FinTable{Index: j, Token: x, Value: y.Token})
-					state = true
-				}
-			}
-		}
-		if state != true {
+		if elem, ok := lexer.Keyval[x]; ok {
+			ft = append(ft, FinTable{Index: j, Token: x, Value: elem})
+		} else {
 			temp, err := Detect(x)
 			if err != nil {
-				fmt.Printf("compile failed because %s is %v\n", x, err)
-				break
+				fmt.Println(x)
+				panic(err)
 			} else {
 				ft = append(ft, FinTable{Index: j, Token: x, Value: temp})
 			}
