@@ -1,3 +1,4 @@
 *.csv
 *.sh
 test/
+main_test.go

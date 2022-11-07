@@ -14,14 +14,9 @@ type FinTable struct {
 
 func Organize(token []string, ft []FinTable) []FinTable {
 	for j, x := range token {
-		state := false
-		for key, val := range lexer.Keyval {
-			if key == x {
-				ft = append(ft, FinTable{Index: j, Token: x, Value: val})
-			}
-		}
-
-		if !state {
+		if elem, ok := lexer.Keyval[x]; ok {
+			ft = append(ft, FinTable{Index: j, Token: x, Value: elem})
+		} else {
 			temp, err := Detect(x)
 			if err != nil {
 				fmt.Println(x)
